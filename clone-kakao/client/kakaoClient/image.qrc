@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/kakaoLogo.png</file>
+    </qresource>
+</RCC>
