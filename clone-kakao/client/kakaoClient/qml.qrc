@@ -4,7 +4,7 @@
         <file>Login.qml</file>
         <file>ContentsView.qml</file>
         <file>ContentsNavigation.qml</file>
-        <file>ContentsViewFlag.qml</file>
+        <file>ContentsFlag.qml</file>
         <file>ContentsChat.qml</file>
     </qresource>
 </RCC>

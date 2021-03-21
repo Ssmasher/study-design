@@ -2,7 +2,7 @@ import QtQuick 2.0
 
 Rectangle {
 
-    ContentsViewFlag {
+    ContentsFlag {
         anchors.right: parent.right
         anchors.rightMargin: 10
         z: 1
@@ -19,6 +19,5 @@ Rectangle {
         width: parent.width - navigation.width
         height: parent.height
     }
-
 
 }

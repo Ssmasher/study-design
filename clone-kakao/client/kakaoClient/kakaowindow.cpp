@@ -1,5 +1,9 @@
 #include "kakaowindow.h"
+
 #include <QDebug>
+#include <QQmlContext>
+
+#include "viewStatusController.h"
 
 KakaoWindow::KakaoWindow(QString qmlPath) : QQmlApplicationEngine(nullptr)
 {
@@ -20,5 +24,5 @@ void KakaoWindow::init()
 
 void KakaoWindow::setRootContext()
 {
-
+    this->rootContext()->setContextProperty("ViewStatusController", &ViewStatusController::instance());
 }

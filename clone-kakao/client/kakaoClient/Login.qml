@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.15
+import ViewStatusEnums 1.0
 
 Rectangle {
     color: "#F7E600"
@@ -87,6 +88,7 @@ Rectangle {
     }
 
     Button {
+        id: sendButtom
         anchors.top: pwdField.bottom
         anchors.topMargin: 5
         anchors.horizontalCenter: parent.horizontalCenter
@@ -101,13 +103,23 @@ Rectangle {
             color: 4 <= pwdField.length ? "lightblue" : "lightgray"
         }
 
-        onClicked: loginInfoChecker()
+        onClicked: sendButtom.requestCheckingLoginInfo()
 
-        function loginInfoChecker() {
-            // #TODO
-            stack.push("qrc:/ContentsView.qml")
+        function requestCheckingLoginInfo() {
+            ViewStatusController.requestLogin(idField.text, pwdField.text)
         }
+    }
 
+    Connections {
+        target: ViewStatusController
+
+        function onSigViewStatChanged() {
+            if (ViewStatusController.mViewStat === ViewStatus.FriendList) {
+                stack.push("qrc:/ContentsView.qml")
+                idField.clear()
+                pwdField.clear()
+            }
+        }
     }
 
 

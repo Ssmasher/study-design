@@ -9,7 +9,10 @@ CONFIG -= app_bundle
 
 SOURCES += \
         kakaowindow.cpp \
-        main.cpp
+        main.cpp \
+        restAccessManager.cpp \
+        restComponent.cpp \
+        viewStatusController.cpp
 
 # Default rules for deployment.
 #qnx: target.path = /tmp/$${TARGET}/bin
@@ -24,7 +27,11 @@ RCC_DIR = .rcc/
 DESTDIR = build/
 
 HEADERS += \
-    kakaowindow.h
+    kCodeHelper.h \
+    kakaowindow.h \
+    restAccessManager.h \
+    restComponent.h \
+    viewStatusController.h
 
 RESOURCES += \
     image.qrc \
